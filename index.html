@@ -4,72 +4,96 @@
     <meta charset="UTF-8">
     <title>Justin Cercado | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <header>
+<header>
     <h1>Justin Cercado</h1>
     <p>Software Developer, Web Enthusiast, Electrical Engineer</p>
-    </header>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Website Development practice</h3>
-            <p>This is a website for practice for full stack development.</p>
-            <a href="#" target="_blank">View Project</a>
-            <a href="#" target="_blank">GitHub</a>
-        </div>
-    </section>
+    <!-- 🔵 Dark Mode + Theme Selector -->
+    <div class="theme-controls">
+        <button id="dark-toggle">🌙 Dark Mode</button>
 
-    </section id="about">
-        <h2>About Me</h2>
-        <p>I am Justin and this website is made for practice for Website development, stick around to see the progress as an electrical Engineering Student in the University of Canterbury!!</p>
-    </section>
+        <select id="theme-select">
+            <option value="#0077ff">Blue</option>
+            <option value="#ff5757">Red</option>
+            <option value="#4caf50">Green</option>
+            <option value="#8e44ad">Purple</option>
+            <option value="#ff9900">Orange</option>
+        </select>
+    </div>
+</header>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: justinc.cercado@gmail.com
-            Mobile: +64 021 028 24100
-            LinkedIn: https://www.linkedin.com/in/justin-cercado/
-        </p>
-    </section>
+<section id="projects">
+    <h2>Projects</h2>
 
-    <section id="budget">
-  <h2>Budget Tracker</h2>
-  <form id="budget-form">
-    <input type="text" id="description" placeholder="Description" required>
-    <input type="number" id="amount" placeholder="Amount ($)" required>
-    <select id="type">
-      <option value="income">Income</option>
-      <option value="expense">Expense</option>
-    </select>
-    <button type="submit">Add</button>
-  </form>
-
-  <table id="budget-table">
-    <thead>
-      <tr>
-        <th>Description</th>
-        <th>Amount</th>
-        <th>Type</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-
-  <div id="summary">
-    <p><strong>Total Income:</strong> $<span id="total-income">0</span></p>
-    <p><strong>Total Expense:</strong> $<span id="total-expense">0</span></p>
-    <p><strong>Balance:</strong> $<span id="balance">0</span></p>
-  </div>
+    <div class="project-card">
+        <h3>Website Development Practice</h3>
+        <p>This website is for practicing full stack development.</p>
+        <a href="#" target="_blank">View Project</a>
+        <a href="#" target="_blank">GitHub</a>
+    </div>
 </section>
 
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am Justin and this website is made for practice for Website development. Stick around to see the progress as an Electrical Engineering Student at UC!</p>
+</section>
 
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Email: <strong>justinc.cercado@gmail.com</strong><br>
+        Mobile: <strong>+64 021 028 24100</strong><br>
+        LinkedIn: 
+        <a href="https://www.linkedin.com/in/justin-cercado/" target="_blank">Click here</a>
+    </p>
+</section>
+
+<section id="budget">
+    <h2>Budget Tracker</h2>
+
+    <form id="budget-form">
+        <input type="text" id="description" placeholder="Description" required>
+        <input type="number" id="amount" placeholder="Amount ($)" required>
+        <select id="type">
+            <option value="income">Income</option>
+            <option value="expense">Expense</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+
+    <table id="budget-table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Type</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div id="summary">
+        <p><strong>Total Income:</strong> $<span id="total-income">0</span></p>
+        <p><strong>Total Expense:</strong> $<span id="total-expense">0</span></p>
+        <p><strong>Balance:</strong> $<span id="balance">0</span></p>
+    </div>
+
+    <!-- 📊 Charts -->
+    <div class="charts">
+        <canvas id="pieChart"></canvas>
+        <canvas id="barChart"></canvas>
+    </div>
+</section>
+
+<!-- JS Logic -->
+<script src="script.js"></script>
 
 </body>
 </html>
-
-
-
