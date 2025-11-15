@@ -222,8 +222,20 @@ table th, table td {
     gap: 20px;
 }
 
-canvas {
+/* Pie chart smaller, bar chart flexible */
+#pieChart {
+    flex: 0 0 250px;
+    max-width: 250px;
+    height: 250px !important;
+}
+
+#barChart {
     flex: 1 1 300px;
+    min-width: 300px;
+    height: 300px;
+}
+
+canvas {
     background: #fff;
     padding: 20px;
     border-radius: 12px;

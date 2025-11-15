@@ -1,10 +1,14 @@
+// -------------------------
 // Dark Mode Toggle
+// -------------------------
 const darkToggle = document.getElementById('dark-toggle');
 darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
+// -------------------------
 // Theme Selector
+// -------------------------
 const themeSelect = document.getElementById('theme-select');
 themeSelect.addEventListener('change', (e) => {
     document.querySelectorAll('.btn').forEach(btn => {
@@ -12,7 +16,9 @@ themeSelect.addEventListener('change', (e) => {
     });
 });
 
+// -------------------------
 // Budget Tracker Logic
+// -------------------------
 const budgetForm = document.getElementById('budget-form');
 const budgetTable = document.querySelector('#budget-table tbody');
 let budgetData = [];
@@ -60,7 +66,9 @@ function deleteItem(index) {
     renderBudget();
 }
 
+// -------------------------
 // Charts
+// -------------------------
 let pieChart, barChart;
 
 function updateCharts(income, expense) {
@@ -91,6 +99,7 @@ function updateCharts(income, expense) {
         data: pieData,
         options: {
             responsive: true,
+            maintainAspectRatio: false, // allow small size
             plugins: { legend: { position: 'bottom' } }
         }
     });
