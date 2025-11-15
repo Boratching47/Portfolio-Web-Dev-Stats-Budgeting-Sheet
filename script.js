@@ -1,10 +1,14 @@
+// -------------------------
 // Dark Mode Toggle
+// -------------------------
 const darkToggle = document.getElementById('dark-toggle');
 darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
+// -------------------------
 // Theme Selector
+// -------------------------
 const themeSelect = document.getElementById('theme-select');
 let themeColor = '#0077ff'; // default theme color
 
@@ -16,7 +20,50 @@ themeSelect.addEventListener('change', (e) => {
     updateCharts(totalIncome, totalExpense); // update chart colors dynamically
 });
 
+// -------------------------
+// Navbar Hamburger Toggle
+// -------------------------
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// -------------------------
+// Smooth Scroll & Active Link
+// -------------------------
+const sections = document.querySelectorAll('section');
+const navItems = document.querySelectorAll('.nav-links li a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+    });
+
+    navItems.forEach(a => {
+        a.classList.remove('active-link');
+        if (a.getAttribute('href') === `#${current}`) {
+            a.classList.add('active-link');
+        }
+    });
+});
+
+// Smooth scrolling on click
+navItems.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        if (navLinks.classList.contains('active')) navLinks.classList.remove('active'); // close mobile menu
+    });
+});
+
+// -------------------------
 // Budget Tracker
+// -------------------------
 const budgetForm = document.getElementById('budget-form');
 const budgetTable = document.querySelector('#budget-table tbody');
 let budgetData = [];
@@ -65,7 +112,9 @@ function deleteItem(index) {
     renderBudget();
 }
 
+// -------------------------
 // Charts
+// -------------------------
 let pieChart, barChart;
 
 function updateCharts(income, expense) {
