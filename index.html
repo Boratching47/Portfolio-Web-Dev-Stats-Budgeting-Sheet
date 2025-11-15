@@ -14,10 +14,9 @@
     <h1>Justin Cercado</h1>
     <p>Software Developer, Web Enthusiast, Electrical Engineer</p>
 
-    <!-- 🔵 Dark Mode + Theme Selector -->
+    <!-- Dark Mode + Theme Selector -->
     <div class="theme-controls">
         <button id="dark-toggle">🌙 Dark Mode</button>
-
         <select id="theme-select">
             <option value="#0077ff">Blue</option>
             <option value="#ff5757">Red</option>
@@ -34,14 +33,25 @@
     <div class="project-card">
         <h3>Website Development Practice</h3>
         <p>This website is for practicing full stack development.</p>
-        <a href="#" target="_blank">View Project</a>
-        <a href="#" target="_blank">GitHub</a>
+        <div class="project-links">
+            <a href="#" target="_blank" class="btn">View Project</a>
+            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>Budget Tracker App</h3>
+        <p>Track your income and expenses with live charts.</p>
+        <div class="project-links">
+            <a href="#" target="_blank" class="btn">View Project</a>
+            <a href="#" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
     </div>
 </section>
 
 <section id="about">
     <h2>About Me</h2>
-    <p>I am Justin and this website is made for practice for Website development. Stick around to see the progress as an Electrical Engineering Student at UC!</p>
+    <p>I am Justin, an Electrical Engineering Student at the University of Canterbury currently building my portfolio.</p>
 </section>
 
 <section id="contact">
@@ -49,8 +59,7 @@
     <p>
         Email: <strong>justinc.cercado@gmail.com</strong><br>
         Mobile: <strong>+64 021 028 24100</strong><br>
-        LinkedIn: 
-        <a href="https://www.linkedin.com/in/justin-cercado/" target="_blank">Click here</a>
+        LinkedIn: <a href="https://www.linkedin.com/in/justin-cercado/" target="_blank">Click here</a>
     </p>
 </section>
 
@@ -64,7 +73,7 @@
             <option value="income">Income</option>
             <option value="expense">Expense</option>
         </select>
-        <button type="submit">Add</button>
+        <button type="submit" class="btn">Add</button>
     </form>
 
     <table id="budget-table">
@@ -85,15 +94,12 @@
         <p><strong>Balance:</strong> $<span id="balance">0</span></p>
     </div>
 
-    <!-- 📊 Charts -->
     <div class="charts">
         <canvas id="pieChart"></canvas>
         <canvas id="barChart"></canvas>
     </div>
 </section>
 
-<!-- JS Logic -->
 <script src="script.js"></script>
-
 </body>
 </html>

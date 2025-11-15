@@ -1,114 +1,153 @@
-/* ---------- THEME VARIABLES ---------- */
-:root {
-  --bg: #ffffff;
-  --text: #222;
-  --card: #f4f4f4;
-  --accent: #4a6cf7;
-  --income: #2ecc71;
-  --expense: #e74c3c;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-/* DARK MODE */
-.dark {
-  --bg: #0f0f0f;
-  --text: #eaeaea;
-  --card: #1a1a1a;
-  --accent: #7ab2ff;
-}
-
-/* ---------- GLOBAL ---------- */
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  transition: background 0.3s, color 0.3s;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+    padding: 20px;
 }
 
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #f5f5f5;
+}
+
+/* Header */
 header {
-  text-align: center;
-  padding: 40px;
-  background: var(--accent);
-  color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Theme Controls */
+.theme-controls {
+    margin-top: 15px;
+}
+
+.theme-controls button,
+.theme-controls select {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-controls button:hover,
+.theme-controls select:hover {
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 50px;
 }
 
 h2 {
-  margin-top: 40px;
+    margin-bottom: 20px;
+    color: #0077ff;
 }
 
-/* ---------- TOGGLE BUTTON ---------- */
-#dark-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* ---------- PROJECT CARD ---------- */
+/* Project Cards */
 .project-card {
-  background: var(--card);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 10px;
-  transition: transform 0.2s;
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* ---------- BUDGET TRACKER ---------- */
-#budget {
-  margin: 40px;
-  background: var(--card);
-  padding: 20px;
-  border-radius: 10px;
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-#budget-form input,
-#budget-form select,
-#budget-form button {
-  padding: 10px;
-  margin: 5px;
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #00c6ff, #0077ff);
 }
 
-/* ---------- TABLE ---------- */
+.btn-outline {
+    background: none;
+    color: #0077ff;
+    border: 2px solid #0077ff;
+}
+
+.btn-outline:hover {
+    background: #0077ff;
+    color: #fff;
+}
+
+/* Project Links Container */
+.project-links {
+    margin-top: 10px;
+}
+
+/* Budget Table */
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #5552;
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
 }
 
-/* ---------- CHARTS ---------- */
-#charts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 30px;
+.charts {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.chart-box {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 15px;
-  width: 45%;
-  min-width: 300px;
-  animation: fadeIn 0.7s ease;
+canvas {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
 }
 
-/* Fade animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+body.dark-mode canvas {
+    background: #1e1e1e;
 }
