@@ -8,12 +8,13 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
+/* Add top padding so fixed navbar doesn't cover content */
 body {
     background: #f5f5f5;
     color: #333;
     line-height: 1.6;
     transition: all 0.3s ease;
-    padding: 20px;
+    padding: 90px 20px 20px 20px; /* top padding = navbar height + spacing */
 }
 
 /* -------------------------
@@ -51,6 +52,7 @@ body.dark-mode table td {
 header {
     text-align: center;
     margin-bottom: 40px;
+    padding-top: 20px; /* extra spacing under navbar */
 }
 
 header h1 {

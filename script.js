@@ -1,4 +1,24 @@
 // -------------------------
+// Navbar Hamburger
+// -------------------------
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        navLinks.classList.remove('active');
+    });
+});
+
+// -------------------------
 // Dark Mode Toggle
 // -------------------------
 const darkToggle = document.getElementById('dark-toggle');
@@ -10,55 +30,14 @@ darkToggle.addEventListener('click', () => {
 // Theme Selector
 // -------------------------
 const themeSelect = document.getElementById('theme-select');
-let themeColor = '#0077ff'; // default theme color
+let themeColor = '#0077ff';
 
 themeSelect.addEventListener('change', (e) => {
     themeColor = e.target.value;
     document.querySelectorAll('.btn').forEach(btn => {
         btn.style.background = `linear-gradient(135deg, ${themeColor}, #00c6ff)`;
     });
-    updateCharts(totalIncome, totalExpense); // update chart colors dynamically
-});
-
-// -------------------------
-// Navbar Hamburger Toggle
-// -------------------------
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// -------------------------
-// Smooth Scroll & Active Link
-// -------------------------
-const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav-links li a');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        if (pageYOffset >= sectionTop) current = section.getAttribute('id');
-    });
-
-    navItems.forEach(a => {
-        a.classList.remove('active-link');
-        if (a.getAttribute('href') === `#${current}`) {
-            a.classList.add('active-link');
-        }
-    });
-});
-
-// Smooth scrolling on click
-navItems.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth' });
-        if (navLinks.classList.contains('active')) navLinks.classList.remove('active'); // close mobile menu
-    });
+    updateCharts(totalIncome, totalExpense);
 });
 
 // -------------------------
@@ -75,7 +54,6 @@ budgetForm.addEventListener('submit', e => {
     const desc = document.getElementById('description').value;
     const amount = parseFloat(document.getElementById('amount').value);
     const type = document.getElementById('type').value;
-
     budgetData.push({ desc, amount, type });
     budgetForm.reset();
     renderBudget();
@@ -127,7 +105,6 @@ function updateCharts(income, expense) {
         }]
     };
 
-    // Bar chart gradient
     const barCtx = document.getElementById('barChart').getContext('2d');
     const gradient = barCtx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, themeColor);
@@ -147,26 +124,15 @@ function updateCharts(income, expense) {
     if(pieChart) pieChart.destroy();
     if(barChart) barChart.destroy();
 
-    // Pie chart
     pieChart = new Chart(pieCtx, {
         type: 'pie',
         data: pieData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom' } }
-        }
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
     });
 
-    // Bar chart
     barChart = new Chart(barCtx, {
         type: 'bar',
         data: barData,
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: { legend: { display: false } },
-            scales: { y: { beginAtZero: true } }
-        }
+        options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
     });
 }

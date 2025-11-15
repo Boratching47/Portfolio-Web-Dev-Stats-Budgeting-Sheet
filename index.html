@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Justin Cercado | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- -------------------------
-     Navigation Bar
+
+<!-- -------------------------
+     Navbar
 ------------------------- -->
 <nav class="navbar">
     <div class="navbar-container">
         <a href="#" class="logo">Justin Cercado</a>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#budget">Budget Tracker</a></li>
         </ul>
@@ -29,12 +29,13 @@
     </div>
 </nav>
 
-
+<!-- -------------------------
+     Header
+------------------------- -->
 <header>
     <h1>Justin Cercado</h1>
     <p>Software Developer, Web Enthusiast, Electrical Engineer</p>
 
-    <!-- Dark Mode + Theme Selector -->
     <div class="theme-controls">
         <button id="dark-toggle">🌙 Dark Mode</button>
         <select id="theme-select">
@@ -47,9 +48,11 @@
     </div>
 </header>
 
+<!-- -------------------------
+     Projects Section
+------------------------- -->
 <section id="projects">
     <h2>Projects</h2>
-
     <div class="project-card">
         <h3>Website Development Practice</h3>
         <p>This website is for practicing full stack development.</p>
@@ -58,7 +61,6 @@
             <a href="https://github.com/Boratching47/Portfolio-Web-Dev-Stats-Budgeting-Sheet" target="_blank" class="btn btn-outline">GitHub</a>
         </div>
     </div>
-
     <div class="project-card">
         <h3>Budget Tracker App</h3>
         <p>Track your income and expenses with live charts.</p>
@@ -69,11 +71,17 @@
     </div>
 </section>
 
+<!-- -------------------------
+     About Section
+------------------------- -->
 <section id="about">
     <h2>About Me</h2>
     <p>I am Justin, an Electrical Engineering Student at the University of Canterbury currently building my portfolio.</p>
 </section>
 
+<!-- -------------------------
+     Contact Section
+------------------------- -->
 <section id="contact">
     <h2>Contact</h2>
     <p>
@@ -83,9 +91,11 @@
     </p>
 </section>
 
+<!-- -------------------------
+     Budget Tracker Section
+------------------------- -->
 <section id="budget">
     <h2>Budget Tracker</h2>
-
     <form id="budget-form">
         <input type="text" id="description" placeholder="Description" required>
         <input type="number" id="amount" placeholder="Amount ($)" required>
