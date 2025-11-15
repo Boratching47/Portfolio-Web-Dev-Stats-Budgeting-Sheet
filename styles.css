@@ -24,7 +24,6 @@ body.dark-mode {
     color: #f5f5f5;
 }
 
-/* Adjust text inside cards, tables, inputs in dark mode */
 body.dark-mode .project-card,
 body.dark-mode table,
 body.dark-mode canvas,
@@ -97,7 +96,7 @@ section h2 {
     font-size: 2em;
     font-weight: 500;
     margin-bottom: 25px;
-    color: #4a4a4a; /* Neutral gray */
+    color: #4a4a4a;
     position: relative;
     display: inline-block;
     transition: color 0.3s ease;
@@ -119,7 +118,6 @@ section h2:hover::after {
     width: 100%;
 }
 
-/* Titles in dark mode */
 body.dark-mode section h2 {
     color: #dcdcdc;
 }
@@ -160,7 +158,7 @@ body.dark-mode section h2 {
     overflow: hidden;
 }
 
-/* Add subtle texture effect */
+/* Subtle texture effect */
 .btn::before {
     content: "";
     position: absolute;
@@ -170,14 +168,13 @@ body.dark-mode section h2 {
     border-radius: 8px;
 }
 
-/* Smooth hover animation */
 .btn:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 25px rgba(0,0,0,0.25);
     background: linear-gradient(135deg, #00c6ff, #0077ff);
 }
 
-/* Outlined button variant */
+/* Outlined button */
 .btn-outline {
     background: none;
     color: #0077ff;
@@ -190,7 +187,7 @@ body.dark-mode section h2 {
 }
 
 /* -------------------------
-   Project Links Container
+   Project Links
 ------------------------- */
 .project-links {
     margin-top: 10px;
@@ -222,7 +219,6 @@ table th, table td {
     gap: 20px;
 }
 
-/* Pie chart smaller, bar chart flexible */
 #pieChart {
     flex: 0 0 250px;
     max-width: 250px;
@@ -245,7 +241,6 @@ canvas {
 
 body.dark-mode canvas {
     background: #1e1e1e;
-    color: #f5f5f5;
 }
 
 /* -------------------------
